@@ -1,29 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Book Report</title>
-    <style media="screen">
-      ul {
-        list-style: none;
-        display: flex;
-        border-bottom: 5px solid black;
-      }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TIY Database Website</title>
 
-      li {
-        border: 1px solid gray;
-        margin: 10px;
-        padding: 10px;
-      }
-    </style>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
-      <p>/ Name / Phone / Address / Position / Salary / Slack accnt / GitHub /</p>
-    <% @people.each do |person| %>
-      <ul>
-        <li><%= person.name %> / <%= person.address %> / <%= person.position %> / <%= person.salary %> / <%= person.slack_account %> / <%= person.github_account %></li>
-        <li>Random space for <%= person.name %></li>
-      </ul>
-    <% end %>
+    <div class="container">
+      <div class="panel panel-success">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <h3><span class="glyphicon glyphicon-check" aria-hidden="true"></span>TIY Database</h3>
+          </div>
+
+        <!-- Table -->
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <h4>Name</h4>
+              </td>
+              <td>
+                <h4>Phone#</h4>
+              </td>
+              <td>
+                <h4>Address</h4>
+              </td>
+
+              <td>
+                <h4>Position</h4>
+              </td>
+              <td>
+                <h4>Salary</h4>
+              </td>
+              <td>
+                <h4>Slack Account</h4>
+              </td>
+              <td>
+                <h4>GitHub Handle</h4>
+              </td>
+            </tr>
+            <% @people.each do |person| %>
+              <tr>
+                <td><%= person.name %></td>
+                <td><%= person.phone_number %></td>
+                <td><%= person.address %></td>
+                <td><%= person.position %></td>
+                <td><%= person.salary %></td>
+                <td><%= person.slack_account %></td>
+                <td><%= person.github_account %></td>
+              </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
